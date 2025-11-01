@@ -110,7 +110,7 @@ function animateStats() {
                 current = target;
                 clearInterval(timer);
             }
-            stat.textContent = Math.floor(current) + (stat.textContent.includes('%') ? '%' : '') + (stat.textContent.slice(Math.abs(target).toString().length));
+            stat.textContent = Math.floor(current) + (stat.textContent.includes('%') ? '%' : '') + (stat.textContent.includes('B') ? 'B' : '');
         }, 16);
     });
 }
