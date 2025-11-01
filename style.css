@@ -1,0 +1,578 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #B31917;
+    --gold: #FFD700;
+    --green: #008751;
+    --black: #000000;
+    --white: #ffffff;
+    --dark-bg: #0a0a0a;
+    --gray: #333333;
+    --light-gray: #666666;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--white);
+    background: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h2 {
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.nav-logo span {
+    color: var(--white);
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--gold);
+}
+
+.cta-button {
+    background: var(--primary-red);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #8a130f;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--black) 0%, var(--gray) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23B31917" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--light-gray);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #8a130f;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+}
+
+.btn-secondary:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    color: var(--light-gray);
+}
+
+.hero-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.freedom-symbol {
+    font-size: 8rem;
+    opacity: 0.7;
+}
+
+/* Sections Common Styles */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--gold);
+}
+
+/* Revolution Section */
+.revolution {
+    background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+}
+
+.revolution-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-red);
+    padding-left: 1rem;
+}
+
+.principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.principle {
+    padding: 1.5rem;
+    background: rgba(179, 25, 23, 0.1);
+    border-radius: 10px;
+    border: 1px solid var(--primary-red);
+}
+
+.principle h4 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+/* Mission Section */
+.mission {
+    background: var(--black);
+}
+
+.creed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.creed-item {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--gray) 0%, #444 100%);
+    border-radius: 10px;
+    border-left: 4px solid var(--gold);
+}
+
+.creed-item h3 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+/* Tokenomics Section */
+.tokenomics {
+    background: linear-gradient(135deg, #1a1a1a 0%, var(--black) 100%);
+}
+
+.tokenomics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.token-card {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+    margin-bottom: 2rem;
+}
+
+.token-card h3 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.token-details p {
+    margin-bottom: 0.5rem;
+}
+
+.features-list ul {
+    list-style: none;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.allocation {
+    background: rgba(179, 25, 23, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--primary-red);
+}
+
+.allocation h3 {
+    color: var(--gold);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.allocation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.percentage {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.label {
+    color: var(--white);
+}
+
+/* Roadmap Section */
+.roadmap {
+    background: var(--black);
+}
+
+.roadmap-phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.phase {
+    background: linear-gradient(135deg, var(--gray) 0%, #444 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-red);
+}
+
+.phase h3 {
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.phase ul {
+    list-style: none;
+}
+
+.phase li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+/* Join Section */
+.join {
+    background: linear-gradient(135deg, #1a1a1a 0%, var(--black) 100%);
+}
+
+.join-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.join-steps h3 {
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+}
+
+.step-number {
+    background: var(--primary-red);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-right: 1rem;
+}
+
+.step-content h4 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.community-links h3 {
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    display: block;
+    padding: 1rem;
+    background: var(--gray);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.social-link:hover {
+    background: var(--primary-red);
+}
+
+.contract-address {
+    background: rgba(179, 25, 23, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--primary-red);
+}
+
+.address {
+    background: var(--gray);
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: monospace;
+    margin: 1rem 0;
+    word-break: break-all;
+}
+
+.btn-copy {
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+
+.btn-copy:hover {
+    background: #e6c200;
+}
+
+/* Footer */
+.footer {
+    background: var(--black);
+    border-top: 1px solid var(--gray);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo h3 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray);
+    color: var(--light-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+    
+    .tokenomics-grid,
+    .join-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+}
